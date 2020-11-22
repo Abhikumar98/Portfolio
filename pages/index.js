@@ -26,25 +26,26 @@ export default function Home() {
     ];
 
     return (
-        <div className="container mx-12 grid grid-cols-12 text-blue-400 font-title xl:mx-24 lg:mx-20 md:mx-16 sm:mx-14">
+        <div className="container mx-12 grid grid-cols-12 text-blue-500 font-title xl:mx-24 lg:mx-20 md:mx-16 sm:mx-14">
             <Head>
                 <title>Abhishek Kumar</title>
             </Head>
             <div className="mt-16 col-span-full">
                 <div className=" text-xl pb-5">Hey </div>
-                <div className="text-2xl font-semibold text-blue-500">
+                <div className="text-2xl font-semibold text-blue-600">
                     I'm Abhishek kumar
                 </div>
             </div>
             <p className="col-start-1 col-end-12 mt-10 text-xl md:col-end-12 sm:col-end-12">
-                I'm a Frontend Web Developer, currently located in Bangalore.
+                I'm a Frontend Web Developer, currently located in Bangalore,
+                India (GMT +5:30).
             </p>
             <p className="col-start-1 col-end-12 mt-10 text-xl">
                 Developer at{" "}
                 <a
                     href="https://zomentum.com"
                     target="__blank"
-                    className=" hover:text-blue-600 hover:underline font-semibold leading-3 mx-1 text-blue-500"
+                    className=" hover:text-blue-600 hover:underline font-semibold leading-3 mx-1 text-blue-600"
                 >
                     Zomentum
                 </a>
@@ -59,7 +60,7 @@ export default function Home() {
                         className={`grid place-items-center mb-8 mr-8`}
                     >
                         <img width={56} height={56} src={skill.iconPath} />
-                        <span className="text-blue-500 text-md mt-2">
+                        <span className="text-blue-600 text-md mt-2">
                             {skill.skillName}
                         </span>
                     </div>
@@ -72,7 +73,7 @@ export default function Home() {
                 You can reach me at{" "}
                 <a
                     href="mailto:abhishekkumar35962@gmail.com?subject=Hey Abhishek, I was checking out your portfolio&body=👋 Hey, wanted to have a quick chat."
-                    className="hover:underline font-semibold text-blue-500"
+                    className="hover:underline font-semibold text-blue-600"
                 >
                     abhishekkumar35962@gmail.com
                 </a>
