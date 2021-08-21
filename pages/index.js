@@ -35,9 +35,6 @@ export default function Home() {
 
     return (
         <div className="container mx-12 grid grid-cols-12 text-blue-500 font-title xl:mx-24 lg:mx-20 md:mx-16 sm:mx-14">
-            <Head>
-                <title>Abhishek Kumar</title>
-            </Head>
             <div className="mt-16 col-span-full">
                 <div className=" text-xl pb-5">Hey </div>
                 <div className="text-2xl font-semibold text-blue-600">
