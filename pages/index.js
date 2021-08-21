@@ -5,23 +5,31 @@ export default function Home() {
     const skills = [
         {
             skillName: "JavaScript",
-            iconPath: "/javascript.png",
+            iconPath: "/javascript.svg",
         },
         {
             skillName: "TypeScript",
-            iconPath: "/typescript.png",
+            iconPath: "/typescript.svg",
         },
         {
             skillName: "React",
-            iconPath: "/react.png",
+            iconPath: "/react.svg",
         },
         {
             skillName: "Redux",
-            iconPath: "/redux.png",
+            iconPath: "/redux.svg",
         },
         {
             skillName: "Firebase",
-            iconPath: "/firebase.png",
+            iconPath: "/firebase.svg",
+        },
+        {
+            skillName: "NextJs",
+            iconPath: "/nextjs.svg",
+        },
+        {
+            skillName: "Vercel",
+            iconPath: "/vercel.svg",
         },
     ];
 
@@ -59,7 +67,7 @@ export default function Home() {
                         key={index}
                         className={`grid place-items-center mb-8 mr-8`}
                     >
-                        <img width={56} height={56} src={skill.iconPath} />
+                        <Image width={56} height={56} src={skill.iconPath} />
                         <span className="text-blue-600 text-md mt-2">
                             {skill.skillName}
                         </span>
@@ -78,12 +86,23 @@ export default function Home() {
                     abhishekkumar35962@gmail.com
                 </a>
             </div>
-            <footer className="my-6 flex col-start-1 col-end-6 ">
-                <a target="__blank" href="https://github.com/Abhikumar98">
-                    <img className="mr-5 w-8 h-8" src="/github.png" />
+            <footer className="my-6 flex items-center col-start-1 col-end-6 ">
+                <a
+                    className="mr-5"
+                    target="__blank"
+                    href="https://github.com/Abhikumar98"
+                >
+                    <Image width={24} height={24} src="/github.svg" />
+                </a>
+                <a
+                    className="mr-5"
+                    target="__blank"
+                    href="https://www.linkedin.com/in/abhishekkumar98/"
+                >
+                    <Image width={24} height={24} src="/linkedin.svg" />
                 </a>
                 <a target="__blank" href="https://twitter.com/abhikumar_98">
-                    <img className="w-8 h-8" src="/twitter.png" />
+                    <Image width={24} height={24} src="/twitter.svg" />
                 </a>
             </footer>
         </div>
