@@ -92,11 +92,12 @@ function MyApp({ Component, pageProps }) {
                 />
                 <meta
                     property="og:image"
-                    content="https://ik.imagekit.io/abhishekkumar/IMG_20181201_144641__1__ds0e8wIsc.jpg"
+                    content="https://ik.imagekit.io/abhishekkumar/IMG_20181201_144641__1__1__1__sut-0wVmT.png"
                 />
                 <meta
                     property="shortcut icon"
-                    content="https://ik.imagekit.io/abhishekkumar/IMG_20181201_144641__1__ds0e8wIsc.jpg"
+                    itemProp="image"
+                    content="https://ik.imagekit.io/abhishekkumar/IMG_20181201_144641__1__1__1__sut-0wVmT.png"
                 />
                 <meta
                     property="twitter:card"
@@ -113,7 +114,7 @@ function MyApp({ Component, pageProps }) {
                 />
                 <meta
                     property="twitter:image"
-                    content="https://ik.imagekit.io/abhishekkumar/IMG_20181201_144641__1__ds0e8wIsc.jpg"
+                    content="https://ik.imagekit.io/abhishekkumar/IMG_20181201_144641__1__1__1__sut-0wVmT.png"
                 />
             </Head>
             <Component {...pageProps} />
