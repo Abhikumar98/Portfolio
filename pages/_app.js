@@ -6,6 +6,10 @@ function MyApp({ Component, pageProps }) {
         <>
             <Head>
                 <title>Hello, I'm Abhishek</title>
+                <meta
+                    name="description"
+                    content="Abhishek Kumar | Frontend developer"
+                ></meta>
                 <link
                     rel="apple-touch-icon"
                     sizes="57x57"

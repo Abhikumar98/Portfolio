@@ -37,9 +37,9 @@ export default function Home() {
         <div className="container mx-12 grid grid-cols-12 text-blue-500 font-title xl:mx-24 lg:mx-20 md:mx-16 sm:mx-14">
             <div className="mt-16 col-span-full">
                 <div className=" text-xl pb-5">Hey </div>
-                <div className="text-2xl font-semibold text-blue-600">
+                <h1 className="text-2xl font-semibold text-blue-600">
                     I'm Abhishek kumar
-                </div>
+                </h1>
             </div>
             <p className="col-start-1 col-end-12 mt-10 text-xl md:col-end-12 sm:col-end-12">
                 I'm a Frontend Web Developer, currently located in Bangalore,
@@ -64,7 +64,12 @@ export default function Home() {
                         key={index}
                         className={`grid place-items-center mb-8 mr-8`}
                     >
-                        <Image width={56} height={56} src={skill.iconPath} />
+                        <Image
+                            width={56}
+                            height={56}
+                            src={skill.iconPath}
+                            alt={skill.skillName}
+                        />
                         <span className="text-blue-600 text-md mt-2">
                             {skill.skillName}
                         </span>
@@ -89,17 +94,32 @@ export default function Home() {
                     target="__blank"
                     href="https://github.com/Abhikumar98"
                 >
-                    <Image width={24} height={24} src="/github.svg" />
+                    <Image
+                        alt="Github"
+                        width={24}
+                        height={24}
+                        src="/github.svg"
+                    />
                 </a>
                 <a
                     className="mr-5"
                     target="__blank"
                     href="https://www.linkedin.com/in/abhishekkumar98/"
                 >
-                    <Image width={24} height={24} src="/linkedin.svg" />
+                    <Image
+                        alt="LinkedIn"
+                        width={24}
+                        height={24}
+                        src="/linkedin.svg"
+                    />
                 </a>
                 <a target="__blank" href="https://twitter.com/abhikumar_98">
-                    <Image width={24} height={24} src="/twitter.svg" />
+                    <Image
+                        alt="Twitter"
+                        width={24}
+                        height={24}
+                        src="/twitter.svg"
+                    />
                 </a>
             </footer>
         </div>
