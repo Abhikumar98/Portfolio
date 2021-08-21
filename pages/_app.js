@@ -107,7 +107,10 @@ function MyApp({ Component, pageProps }) {
                     property="twitter:description"
                     content="Abhishek Kumar | Frontend developer"
                 />
-                <meta property="twitter:image" content="" />
+                <meta
+                    property="twitter:image"
+                    content="https://ik.imagekit.io/abhishekkumar/IMG_20181201_144641__1__ds0e8wIsc.jpg"
+                />
             </Head>
             <Component {...pageProps} />
         </>
