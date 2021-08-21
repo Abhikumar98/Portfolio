@@ -5,11 +5,6 @@ function MyApp({ Component, pageProps }) {
     return (
         <>
             <Head>
-                <title>Hello, I'm Abhishek</title>
-                <meta
-                    name="description"
-                    content="Abhishek Kumar | Frontend developer"
-                ></meta>
                 <link
                     rel="apple-touch-icon"
                     sizes="57x57"
@@ -81,11 +76,32 @@ function MyApp({ Component, pageProps }) {
                 />
                 <link rel="manifest" href="/static/manifest.json" />
                 <meta name="msapplication-TileColor" content="#ffffff" />
-                <meta
-                    name="msapplication-TileImage"
-                    content="/ms-icon-144x144.png"
-                />
                 <meta name="theme-color" content="#ffffff" />
+                <title>Hello, I'm Abhishek</title>
+                <meta name="title" content="Hello, I'm Abhishek" />
+                <meta
+                    name="description"
+                    content="Abhishek Kumar | Frontend developer"
+                />
+                <meta property="og:type" content="website" />
+                <meta property="og:url" content="https://abhishekkumar.dev/" />
+                <meta property="og:title" content="Hello, I'm Abhishek" />
+                <meta
+                    property="og:description"
+                    content="Abhishek Kumar | Frontend developer"
+                />
+                <meta property="og:image" content="/public/static/me.png" />
+                <meta property="twitter:card" content="summary_large_image" />
+                <meta
+                    property="twitter:url"
+                    content="https://abhishekkumar.dev/"
+                />
+                <meta property="twitter:title" content="Hello, I'm Abhishek" />
+                <meta
+                    property="twitter:description"
+                    content="Abhishek Kumar | Frontend developer"
+                />
+                <meta property="twitter:image" content="" />
             </Head>
             <Component {...pageProps} />
         </>
