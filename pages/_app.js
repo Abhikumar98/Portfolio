@@ -95,6 +95,10 @@ function MyApp({ Component, pageProps }) {
                     content="https://ik.imagekit.io/abhishekkumar/IMG_20181201_144641__1__ds0e8wIsc.jpg"
                 />
                 <meta
+                    property="shortcut icon"
+                    content="https://ik.imagekit.io/abhishekkumar/IMG_20181201_144641__1__ds0e8wIsc.jpg"
+                />
+                <meta
                     property="twitter:card"
                     content="Hey there ! I'm Abhishek Kumar. I'm a Frontend Developer"
                 />
