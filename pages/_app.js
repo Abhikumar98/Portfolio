@@ -94,7 +94,10 @@ function MyApp({ Component, pageProps }) {
                     property="og:image"
                     content="https://ik.imagekit.io/abhishekkumar/IMG_20181201_144641__1__ds0e8wIsc.jpg"
                 />
-                <meta property="twitter:card" content="summary_large_image" />
+                <meta
+                    property="twitter:card"
+                    content="Hey there ! I'm Abhishek Kumar. I'm a Frontend Developer"
+                />
                 <meta
                     property="twitter:url"
                     content="https://abhishekkumar.dev/"
