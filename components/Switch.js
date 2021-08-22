@@ -7,7 +7,6 @@ function classNames(...classes) {
 }
 
 const Switch = (props) => {
-    console.log(props.enabled, props.enabled ? "bg-primary" : "bg-link");
     return (
         <HSwitch
             checked={props.enabled}

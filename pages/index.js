@@ -68,8 +68,6 @@ const App = () => {
         updateTheme(darkMode);
     }, []);
 
-    console.log(darkMode, isDarkMode);
-
     const skills = [
         {
             skillName: "JavaScript",
