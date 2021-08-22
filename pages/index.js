@@ -1,11 +1,74 @@
 import Head from "next/head";
 import Image from "next/image";
+import { useEffect, useState } from "react";
+import dynamic from "next/dynamic";
+const Switch = dynamic(() => import("../components/Switch"), {
+    ssr: false,
+});
 
 const App = () => {
-    const isDarkMode =
-        typeof window !== "undefined" &&
-        window.matchMedia &&
-        window.matchMedia("(prefers-color-scheme: dark)").matches;
+    const cachedTheme =
+        typeof localStorage !== "undefined" && localStorage.getItem("theme");
+    const isDarkTheme = cachedTheme === "dark";
+
+    const isDarkMode = !cachedTheme
+        ? typeof window !== "undefined" &&
+          window.matchMedia &&
+          window.matchMedia("(prefers-color-scheme: dark)").matches
+        : isDarkTheme;
+
+    const [darkMode, setDarkMode] = useState(isDarkMode);
+
+    const updateTheme = (value) => {
+        const theme = value ? "dark" : "light";
+        localStorage.setItem("theme", theme);
+        setDarkMode(value);
+    };
+
+    const updatePageTheme = () => {
+        const theme = {
+            primaryColor: "",
+            secondaryColor: "",
+            backgroundColor: "",
+            link: "",
+        };
+
+        if (darkMode) {
+            theme.primaryColor = "#b8c1ec";
+            theme.secondaryColor = "#fffffe";
+            theme.backgroundColor = "#232946";
+            theme.link = "#ffffff";
+        } else {
+            theme.primaryColor = "#0d0d0d";
+            theme.secondaryColor = "#2a2a2a";
+            theme.backgroundColor = "#eff0f3";
+            theme.link = "#ff8e3c";
+        }
+
+        document.documentElement.style.setProperty(
+            "--primaryColor",
+            theme.primaryColor
+        );
+        document.documentElement.style.setProperty(
+            "--secondaryColor",
+            theme.secondaryColor
+        );
+        document.documentElement.style.setProperty(
+            "--backgroundColor",
+            theme.backgroundColor
+        );
+        document.documentElement.style.setProperty("--link", theme.link);
+    };
+
+    useEffect(() => {
+        updatePageTheme();
+    }, [darkMode]);
+
+    useEffect(() => {
+        updateTheme(darkMode);
+    }, []);
+
+    console.log(darkMode, isDarkMode);
 
     const skills = [
         {
@@ -43,7 +106,10 @@ const App = () => {
     ];
 
     return (
-        <div className="mx-none h-screen w-screen p-12 grid grid-cols-12 text-primary font-title xl:p-24 lg:p-20 md:p-16 sm:p-14 bg-background overflow-y-auto">
+        <div className="mx-none h-screen w-screen p-12 pt-6 grid grid-cols-12 text-primary font-title xl:p-24 xl:pt-12 lg:p-20 lg:pt-10 md:p-16 md:pt-8 sm:p-14 sm:p-7 bg-background overflow-y-auto">
+            <div className="col-start-11 mb-6">
+                <Switch enabled={darkMode} onChange={updateTheme} />
+            </div>
             <div className=" col-span-full">
                 <div className=" text-xl pb-5">Hey 👋</div>
                 <h1 className="text-2xl font-semibold">I'm Abhishek kumar</h1>
@@ -73,7 +139,7 @@ const App = () => {
                             width={56}
                             height={56}
                             src={
-                                skill.dark && isDarkMode
+                                skill.dark && darkMode
                                     ? skill.darkPath
                                     : skill.iconPath
                             }
@@ -107,7 +173,7 @@ const App = () => {
                         alt="Github"
                         width={24}
                         height={24}
-                        src={isDarkMode ? "/githubdark.svg" : "/github.svg"}
+                        src={darkMode ? "/githubdark.svg" : "/github.svg"}
                     />
                 </a>
                 <a
