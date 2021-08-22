@@ -1,7 +1,12 @@
 import Head from "next/head";
 import Image from "next/image";
 
-export default function Home() {
+const App = () => {
+    const isDarkMode =
+        typeof window !== "undefined" &&
+        window.matchMedia &&
+        window.matchMedia("(prefers-color-scheme: dark)").matches;
+
     const skills = [
         {
             skillName: "JavaScript",
@@ -26,38 +31,38 @@ export default function Home() {
         {
             skillName: "NextJs",
             iconPath: "/nextjs.svg",
+            darkPath: "/nextjsdark.svg",
+            dark: true,
         },
         {
             skillName: "Vercel",
             iconPath: "/vercel.svg",
+            darkPath: "/verceldark.svg",
+            dark: true,
         },
     ];
 
     return (
-        <div className="container mx-12 grid grid-cols-12 text-blue-500 font-title xl:mx-24 lg:mx-20 md:mx-16 sm:mx-14">
-            <div className="mt-16 col-span-full">
-                <div className=" text-xl pb-5">Hey </div>
-                <h1 className="text-2xl font-semibold text-blue-600">
-                    I'm Abhishek kumar
-                </h1>
+        <div className="mx-none h-screen w-screen p-12 grid grid-cols-12 text-primary font-title xl:p-24 lg:p-20 md:p-16 sm:p-14 bg-background overflow-y-auto">
+            <div className=" col-span-full">
+                <div className=" text-xl pb-5">Hey 👋</div>
+                <h1 className="text-2xl font-semibold">I'm Abhishek kumar</h1>
             </div>
-            <p className="col-start-1 col-end-12 mt-10 text-xl md:col-end-12 sm:col-end-12">
+            <p className="my-4 sm:my-0 col-start-1 col-end-12  text-xl md:col-end-12 sm:col-end-12">
                 I'm a Frontend Web Developer, currently located in Bangalore,
                 India (GMT +5:30).
             </p>
-            <p className="col-start-1 col-end-12 mt-10 text-xl">
+            <p className="my-4 sm:my-0 col-start-1 col-end-12  text-xl">
                 Developer at{" "}
                 <a
                     href="https://zomentum.com"
                     target="__blank"
-                    className=" hover:text-blue-600 hover:underline font-semibold leading-3 mx-1 text-blue-600"
+                    className="text-link hover:underline font-semibold leading-3 mx-1 text-secondary"
                 >
                     Zomentum
                 </a>
             </p>
-            <div className="mt-10 col-span-full text-xl font-semibold">
-                I know ⤵
-            </div>
+            <div className=" col-span-full text-xl font-semibold">I know ⤵</div>
             <div className="mt-5 flex flex-wrap col-start-1 col-end-12 md:col-end-12 sm:col-end-12">
                 {skills.map((skill, index) => (
                     <div
@@ -67,28 +72,32 @@ export default function Home() {
                         <Image
                             width={56}
                             height={56}
-                            src={skill.iconPath}
+                            src={
+                                skill.dark && isDarkMode
+                                    ? skill.darkPath
+                                    : skill.iconPath
+                            }
                             alt={skill.skillName}
                         />
-                        <span className="text-blue-600 text-md mt-2">
+                        <span className="text-primary text-md mt-2">
                             {skill.skillName}
                         </span>
                     </div>
                 ))}
             </div>
-            <div className="col-span-full my-6">
+            <div className="col-span-full ">
                 I also dabble in NodeJS and Express.
             </div>
-            <div className="col-span-full">
+            <div className="my-4 sm:my-0 col-span-full">
                 You can reach me at{" "}
                 <a
                     href="mailto:abhishekkumar35962@gmail.com?subject=Hey Abhishek, I was checking out your portfolio&body=👋 Hey, wanted to have a quick chat."
-                    className="hover:underline font-semibold text-blue-600"
+                    className="text-link hover:underline font-semibold"
                 >
                     abhishekkumar35962@gmail.com
                 </a>
             </div>
-            <footer className="my-6 flex items-center col-start-1 col-end-6 ">
+            <footer className="my-4 pb-4 sm:my-0 sm:pb-0 flex items-center col-start-1 col-end-6 ">
                 <a
                     className="mr-5"
                     target="__blank"
@@ -98,7 +107,7 @@ export default function Home() {
                         alt="Github"
                         width={24}
                         height={24}
-                        src="/github.svg"
+                        src={isDarkMode ? "/githubdark.svg" : "/github.svg"}
                     />
                 </a>
                 <a
@@ -124,4 +133,6 @@ export default function Home() {
             </footer>
         </div>
     );
-}
+};
+
+export default App;

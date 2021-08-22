@@ -9,6 +9,12 @@ module.exports = {
             fontFamily: {
                 title: ["Quicksand"],
             },
+            colors: {
+                primary: "var(--primaryColor)",
+                background: "var(--backgroundColor)",
+                secondary: "var(--secondaryColor)",
+                link: "var(--link)",
+            },
         },
     },
     variants: {
