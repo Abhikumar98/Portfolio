@@ -39,7 +39,7 @@ class MyDocument extends Document {
                     )}
                 </Head>
                 <body>
-                    <script
+                    {/* <script
                         data-name="BMC-Widget"
                         data-cfasync="false"
                         src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js"
@@ -50,7 +50,7 @@ class MyDocument extends Document {
                         data-position="Right"
                         data-x_margin="18"
                         data-y_margin="18"
-                    ></script>
+                    ></script> */}
                     <Main />
                     <NextScript />
                 </body>
